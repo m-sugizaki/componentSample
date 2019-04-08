@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="title">メンバー一覧</div>
+  <div class="member-list-container">
+    <div class="waiting-for-members" *ngIf="members === null; else memberList">
+      メンバーを取得しています...
+    </div>
+    <ng-template #memberList>
+      <div class="member-list-table">
+        <div class="member-line header">
+          <div class="member-id">ID</div>
+          <div class="member-name">名前</div>
+          <div class="member-pass">パスワード</div>
+        </div>
+        <div class="member-line" *ngFor="let member of members" (mouseenter)="hovered(member)" (mouseleave)="unhovered(member)">
+          <div class="member-id">{{ member.id }} </div>
+          <div class="member-name">{{ member.name }}</div>
+          <div class="member-pass">
+            <span *ngIf="!member.hovered; else Unhovered">{{ member.pass }}</span>
+            <ng-template #Unhovered><span class="button white" [routerLink]="[member.id]">詳細</span></ng-template>
+          </div>
+        </div>
+<!--
+        <div class="member-line">
+          <div class="member-id">{{ members[0].id }} </div>
+          <div class="member-name">{{ members[0].name }}</div>
+          <div class="member-pass">{{ members[0].pass }}</div>
+        </div>
+        <div class="member-line">
+          <div class="member-id">{{ members[1].id }} </div>
+          <div class="member-name">{{ members[1].name }}</div>
+          <div class="member-pass">{{ members[1].pass }}</div>
+        </div>
+        <div class="member-line">
+          <div class="member-id">{{ members[2].id }} </div>
+          <div class="member-name">{{ members[2].name }}</div>
+          <div class="member-pass">{{ members[2].pass }}</div>
+        </div>
+      -->
+      </div>
+      <div class="footer">
+        <button class="button-wide" routerLink="/members/new">メンバーを追加する</button>
+      </div>
+　　</ng-template>
+  </div>
+</div>

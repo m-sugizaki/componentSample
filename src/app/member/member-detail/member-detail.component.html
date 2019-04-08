@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="title">メンバー詳細</div>
+  <div class="member-detail-container"  *ngIf="member === null; else memberDetail">
+      データがありません...
+  </div>
+  <ng-template #memberDetail>
+    <div class="member-detail-container">
+<!--    <div class="member-detail-container" *ngFor="let member of member">  -->
+      <div class="param-line">
+        <div class="label">ID</div>
+        <div class="value">{{ member.id }}</div>
+      </div>
+      <div class="param-line">
+        <div class="label">名前</div>
+        <div class="value">{{ member.name }}</div>
+      </div>
+      <div class="param-line">
+        <div class="label">パスワード</div>
+        <div class="value">{{ member.pass }}</div>
+      </div>
+    </div>
+　</ng-template>
+  <div class="footer">
+    <div class="button white" routerLink="/members">メンバー一覧</div>
+    <div class="button black" routerLink="edit">編集</div>
+    <div class="button black" routerLink="del">削除</div>
+    </div>
+</div>
