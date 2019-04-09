@@ -1,12 +1,12 @@
-import { Injectable }    from '@angular/core';
-//@angular/httpが非推奨になった
-//import { Headers, Http, Jsonp, RequestOptionsArgs, RequestOptions, URLSearchParams} from '@angular/http';
+import { Injectable } from '@angular/core';
+// @angular/httpが非推奨になった
+// import { Headers, Http, Jsonp, RequestOptionsArgs, RequestOptions, URLSearchParams} from '@angular/http';
 import { HttpClient, HttpParams, HttpHeaders, HttpErrorResponse} from '@angular/common/http';
-////rxjs6.0からこのような書き方になる
-////import {Observable} from  "rxjs/Observable";
+//// rxjs6.0からこのような書き方になる
+//// import {Observable} from  "rxjs/Observable";
 import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
-////import "rxjs/add/operator/map";
+//// import "rxjs/add/operator/map";
 
 import { Member } from '../member';
 import { NullViewportScroller } from '@angular/common/src/viewport_scroller';
@@ -16,11 +16,11 @@ import { NullViewportScroller } from '@angular/common/src/viewport_scroller';
 })
 export class MemberService {
 
-  //リクエストヘッダを定義 @angular/common/http
+  // リクエストヘッダを定義 @angular/common/http
   private headers: any = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-//  private headers: any = new Headers({'Content-Type': 'application/json', 'charset': 'utf-8', 'Accept': 'application/json'});
-  //RestAPIのURL
-//  private membersUrl = 'http://54.199.142.134:8080/users';
+// private headers: any = new Headers({'Content-Type': 'application/json', 'charset': 'utf-8', 'Accept': 'application/json'});
+  // RestAPIのURL
+// private membersUrl = 'http://54.199.142.134:8080/users';
 // private membersUrl = 'http://localhost:8081/users';
 private membersUrl = 'http://13.115.40.246:8081/users';
 
@@ -36,9 +36,10 @@ private membersUrl = 'http://13.115.40.246:8081/users';
 
 ////////////////////////////////////////////////////
 // Angular 6 HttpClient: Consume RESTful API Example
-// https://www.djamware.com/post/5b87894280aca74669894414/angular-6-httpclient-consume-restful-api-example  
+// https://www.djamware.com/post/5b87894280aca74669894414/angular-6-httpclient-consume-restful-api-example
   private extractData(res: Response) {
-    let body = res;
+    const body = res;
+//    let body = res;
     return body || { };
   }
 
@@ -47,15 +48,15 @@ private membersUrl = 'http://13.115.40.246:8081/users';
     return this.http.get(this.membersUrl).pipe(
       map(this.extractData));
   }
-  
+
   getMember(id: number): Observable<any> {
     console.log(this.headers);
 
     return this.http.get(this.membersUrl + '/' + id).pipe(
       map(this.extractData));
   }
-  
-  addMember (member: Member): Observable<any> {
+
+  addMember(member: Member): Observable<any> {
     console.log(member);
     console.log(this.headers);
 
@@ -64,34 +65,35 @@ private membersUrl = 'http://13.115.40.246:8081/users';
       catchError(this.handleError<any>('addMember'))
     );
   }
-  
-  updateMember (id: number, member: Member): Observable<any> {
-//letでheadersを作らないと、content-type=text/plainになってしまう
-//addはできるのに… 
-    let headers2 = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+
+  updateMember(id: number, member: Member): Observable<any> {
+// letでheadersを作らないと、content-type=text/plainになってしまう
+// addはできるのに…
+    const headers2 = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+//    let headers2 = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
 //    console.log(headers2);
-    return this.http.put(this.membersUrl + '/' + id, JSON.stringify(member), {headers:headers2}).pipe(
+    return this.http.put(this.membersUrl + '/' + id, JSON.stringify(member), {headers: headers2}).pipe(
       tap(_ => console.log(`updated member id=${id}`)),
       catchError(this.handleError<any>('updateMember'))
     );
   }
-  
-  deleteMember (id: number): Observable<any> {
+
+  deleteMember(id: number): Observable<any> {
     return this.http.delete<any>(this.membersUrl + '/' + id, this.headers).pipe(
       tap(_ => console.log(`deleted member id=${id}`)),
       catchError(this.handleError<any>('deleteMember'))
     );
   }
 
-  private handleError<T> (operation = 'operation', result?: T) {
+  private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
-  
+
       // TODO: send the error to remote logging infrastructure
       console.error(error); // log to console instead
-  
+
       // TODO: better job of transforming error for user consumption
       console.log(`${operation} failed: ${error.message}`);
-  
+
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };
@@ -99,7 +101,7 @@ private membersUrl = 'http://13.115.40.246:8081/users';
 // End of Tutorial code
 ////////////////////////////////////////////////////
 
-  //メンバー一覧取得
+  // メンバー一覧取得
   public list(): Observable<Member[]> {
     return this.http.get(this.membersUrl, this.headers).pipe(
       map((response: any) =>
@@ -112,7 +114,7 @@ private membersUrl = 'http://13.115.40.246:8081/users';
   }
 
   getMember2(id: number): Observable<Member> {
-    return this.http.get<Member>(`${this.membersUrl}/${id}`)
+    return this.http.get<Member>(`${this.membersUrl}/${id}`);
 //      .pipe(
 //        catchError(this.handleError<Member>(`getUser id=${id}`))
 //      );
@@ -140,28 +142,28 @@ private membersUrl = 'http://13.115.40.246:8081/users';
 
 
 
-  /**
-   * REST-API 実行時のエラーハンドラ
-   * (toPromise.then((res) =>{}) を利用する場合のコード)
-   *
-   * @private
-   * @param {any} err エラー情報
-   * @memberof HttpClientService
-   */
+  // /**
+  // * REST-API 実行時のエラーハンドラ
+  // * (toPromise.then((res) =>{}) を利用する場合のコード)
+  // *
+  // * @private
+  // * @param {any} err エラー情報
+  // * @memberof HttpClientService
+  // */
   private errorHandler(err) {
     console.log('Error occured.', err);
     return Promise.reject(err.message || err);
   }
 
-  //list(): Observable<Member[]> {
+  // list(): Observable<Member[]> {
   //  return of(this.members);
-  //}
-  //get(id: number): Observable<Member> {
+  // }
+  // get(id: number): Observable<Member> {
   //  return of(this.members[id -1]);
-  //}
+  // }
 
-  //update(member: Member): void {
+  // update(member: Member): void {
   //  const index = this.members.findIndex((mbr: Member) => mbr.id === member.id);
   //  this.members[index] = member;
-  //}
+  // }
 }
