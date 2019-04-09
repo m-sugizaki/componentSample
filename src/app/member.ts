@@ -1,7 +1,7 @@
-export class Member{
-  id:number;
-  name:string;
-  pass:string;
+export class Member {
+  id: number;
+  name: string;
+  pass: string;
 
 //  constructor(key, name, pass) {
   constructor(id, name, pass) {
@@ -9,4 +9,4 @@ export class Member{
     this.name = name;
     this.pass = pass;
   }
-}  
+}

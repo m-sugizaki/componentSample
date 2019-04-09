@@ -10,7 +10,7 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['../member-edit/member-edit.component.scss']
 })
 export class MemberDeleteComponent implements OnInit {
-  @Input() memberData:any = { id: '', name: '', pass: '' };
+  @Input() memberData: any = { id: '', name: '', pass: '' };
 
 　member: any = Member;
   //  member: Member;
@@ -28,13 +28,14 @@ export class MemberDeleteComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getMember(this.route.snapshot.params['id']);
+    this.getMember(this.route.snapshot.params.id);
+//    this.getMember(this.route.snapshot.params['id']);
   }
 
   getMember(id: number) {
     this.memberService.getMember(id).subscribe((data: {}) => {
       console.log(data);
-      //jsonのデータ部だけを格納
+      // jsonのデータ部だけを格納
       this.member = data;
       console.log(this.member);
       this.memberForm.setValue({
@@ -49,10 +50,12 @@ export class MemberDeleteComponent implements OnInit {
 //    ////    console.log(this.member);
 ////    this.router.navigate(['/members']);
     if (this.memberForm.valid) {
-      console.log(this.route.snapshot.params['id']);
+      console.log(this.route.snapshot.params.id);
+//      console.log(this.route.snapshot.params['id']);
 
-      this.memberService.deleteMember(this.route.snapshot.params['id']).subscribe((result) => {
-        this.router.navigate(['/members']);
+      this.memberService.deleteMember(this.route.snapshot.params.id).subscribe((result) => {
+//      this.memberService.deleteMember(this.route.snapshot.params['id']).subscribe((result) => {
+          this.router.navigate(['/members']);
       }, (err) => {
         console.log(err);
       });

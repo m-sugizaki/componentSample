@@ -1,22 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-//RestAPIコールに利用するモジュール追加
-//@angular/httpは非推奨になった
-//import { HttpModule,JsonpModule} from '@angular/http';
+// RestAPIコールに利用するモジュール追加
+// @angular/httpは非推奨になった
+// import { HttpModule,JsonpModule} from '@angular/http';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import 'hammerjs';
-//@angular/materialのバージョン違い
-//import {MdCheckboxModule,MdRadioModule,MdCardModule,MdInputModule,MdButtonModule} from '@angular/material';
-import {MatCheckboxModule,MatRadioModule,MatCardModule,MatInputModule,MatButtonModule} from '@angular/material';
-import {FlexLayoutModule} from "@angular/flex-layout";
+// @angular/materialのバージョン違い
+// import {MdCheckboxModule,MdRadioModule,MdCardModule,MdInputModule,MdButtonModule} from '@angular/material';
+import {MatCheckboxModule, MatRadioModule, MatCardModule, MatInputModule, MatButtonModule} from '@angular/material';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
-//import { DashboardComponent } from './dashboard/dashboard.component';
+// import { DashboardComponent } from './dashboard/dashboard.component';
 
-//import { AppRoutingModule } from './app-routing.module';
+// import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-//メンバー一覧取得用サービス
+// メンバー一覧取得用サービス
 import { MemberService } from './services/member.service';
 import { MemberListComponent } from './member/member-list/member-list.component';
 import { MemberDetailComponent } from './member/member-detail/member-detail.component';
@@ -29,7 +29,7 @@ import { MemberDeleteComponent } from './member/member-delete/member-delete.comp
 @NgModule({
   declarations: [
     AppComponent,
-////DashboardComponentを読み込めるように追加
+//// DashboardComponentを読み込めるように追加
 //    DashboardComponent,
     MemberListComponent,
     MemberDetailComponent,
@@ -39,7 +39,7 @@ import { MemberDeleteComponent } from './member/member-delete/member-delete.comp
   ],
   imports: [
     BrowserModule,
-//RestAPIコールに利用するモジュール追加
+// RestAPIコールに利用するモジュール追加
     HttpClientModule,
     HttpClientJsonpModule,
     AppRoutingModule,
@@ -54,7 +54,7 @@ import { MemberDeleteComponent } from './member/member-delete/member-delete.comp
     ReactiveFormsModule,
   ],
   providers: [
-//商品情報取得用serviceをDIできるように追加
+// 商品情報取得用serviceをDIできるように追加
 //    MemberService
   ],
   bootstrap: [AppComponent]

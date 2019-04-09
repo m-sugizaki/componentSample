@@ -19,20 +19,18 @@ export class MemberDetailComponent implements OnInit {
     private router: Router
   ) { }
 
-//よくわからないが、ngOnInitの外にgetMember()を出したらデータが取れた  
+// よくわからないが、ngOnInitの外にgetMember()を出したらデータが取れた
   ngOnInit() {
-      this.getMember(this.route.snapshot.params['id']);
+      this.getMember(this.route.snapshot.params.id);
+//      this.getMember(this.route.snapshot.params['id']);
   }
   getMember(id: number) {
     this.member = [];
     this.memberService.getMember(id).subscribe((data: {}) => {
       console.log(data);
-    this.member = data;
+      this.member = data;
     });
   }
-
-
-
 
   // changed by tutorial
 //

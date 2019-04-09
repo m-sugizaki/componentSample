@@ -8,7 +8,7 @@ import { MemberDeleteComponent } from './member/member-delete/member-delete.comp
 
 const routes: Routes = [
   { path: 'members', component: MemberListComponent },
-  { path: 'members/new', component: MemberNewComponent }, 
+  { path: 'members/new', component: MemberNewComponent },
   { path: 'members/:id', component: MemberDetailComponent },
   { path: 'members/:id/edit', component: MemberEditComponent },
   { path: 'members/:id/del', component: MemberDeleteComponent },

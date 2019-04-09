@@ -11,7 +11,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class MemberEditComponent implements OnInit {
 
-  @Input() memberData:any = { id: '', name: '', pass: '' };
+  @Input() memberData: any = { id: '', name: '', pass: '' };
 
 　member: any = Member;
   //  member: Member;
@@ -32,13 +32,14 @@ export class MemberEditComponent implements OnInit {
   get pass() { return this.memberForm.get('pass'); }
 
   ngOnInit() {
-    this.getMember(this.route.snapshot.params['id']);
+    this.getMember(this.route.snapshot.params.id);
+//    this.getMember(this.route.snapshot.params['id']);
   }
   getMember(id: number) {
     this.member = [];
     this.memberService.getMember(id).subscribe((data: {}) => {
       console.log(data);
-      //jsonのデータ部だけを格納
+      // jsonのデータ部だけを格納
       this.member = data;
 //      this.member = JSON.stringify(data);
       console.log(this.member);
@@ -84,12 +85,14 @@ export class MemberEditComponent implements OnInit {
 ////    console.log(this.member);
 //    this.router.navigate(['/members']);
     if (this.memberForm.valid) {
-      console.log(this.route.snapshot.params['id']);
+      console.log(this.route.snapshot.params.id);
+//      console.log(this.route.snapshot.params['id']);
       console.log(this.memberForm.getRawValue());
 
-      this.memberService.updateMember(this.route.snapshot.params['id'], 
+      this.memberService.updateMember(this.route.snapshot.params.id,
+//      this.memberService.updateMember(this.route.snapshot.params['id'],
         this.memberForm.getRawValue()).subscribe((result) => {
-        this.router.navigate(['/members/'+result.id]);
+        this.router.navigate(['/members/' + result.id]);
       }, (err) => {
         console.log(err);
       });
