@@ -20,7 +20,7 @@ before_install:
 
 script:
   - ng lint
-  - ng build --prod --base-href="http://m-sugizaki.github.io/componentSample/"
+  - ng build --prod --base-href="/componentSample/"
 
 after_script:
   - npm install coveralls
