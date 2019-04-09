@@ -29,7 +29,7 @@ after_script:
 deploy:
   - provider: codedeploy
     revision_type: github
-    access_key_id: $ACCES_KEY
+    access_key_id: $ACCESS_KEY
     secret_access_key: $SECRET_KEY
     application: 	componentSample
     deployment_group: 	componentSample
