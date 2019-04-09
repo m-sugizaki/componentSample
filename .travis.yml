@@ -1,9 +1,37 @@
 language: node_js
 node_js:
   - "10.15.3"
+
+dist: trusty
+
+cache:
+  directories:
+    - node_modules
+
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+
+before_install:
+  - npm install -g @angular/cli
+
 script:
   - npm run lint
+  - ng test --single-run
+  - ng e2e
+  - ng build --prod --base-href="http://m-sugizaki.github.io/componentSample/"
 
 after_script:
   - npm install coveralls
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist
+  on:
+    branch: master
