@@ -27,9 +27,10 @@ after_script:
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
 
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: dist
-  on:
-    branch: master
+  - provider: codedeploy
+    revision_type: github
+    access_key_id: AKIAIOBTPU4WZQ2WS3JQ
+    secret_access_key: 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
+    application: 	componentSample
+    deployment_group: 	componentSample
+    region: ap-northeast-1
