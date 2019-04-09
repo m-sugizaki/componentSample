@@ -21,8 +21,8 @@ export class MemberService {
 //  private headers: any = new Headers({'Content-Type': 'application/json', 'charset': 'utf-8', 'Accept': 'application/json'});
   //RestAPIのURL
 //  private membersUrl = 'http://54.199.142.134:8080/users';
-private membersUrl = 'http://localhost:8081/users';
-// private membersUrl = 'http://13.115.40.246:8081/users';
+// private membersUrl = 'http://localhost:8081/users';
+private membersUrl = 'http://13.115.40.246:8081/users';
 
 //    members: Member[];
 //  members = [
