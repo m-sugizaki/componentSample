@@ -29,8 +29,8 @@ after_script:
 deploy:
   - provider: codedeploy
     revision_type: github
-    access_key_id: AKIAIOBTPU4WZQ2WS3JQ
-    secret_access_key: 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
+    access_key_id: ＄ACCES_KEY
+    secret_access_key: ＄SECRET_KEY
     application: 	componentSample
     deployment_group: 	componentSample
     region: ap-northeast-1
