@@ -20,7 +20,6 @@ before_install:
 
 script:
   - ng lint
-  - ng test
   - ng build --prod --base-href="http://m-sugizaki.github.io/componentSample/"
 
 after_script:
