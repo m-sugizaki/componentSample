@@ -1,0 +1,46 @@
+language: node_js
+node_js:
+  - "10.15.3"
+
+dist: trusty
+
+cache:
+  directories:
+    - node_modules
+
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+
+before_install:
+  - chmod 555 ./scripts/deploy.sh
+  - npm install -g @angular/cli
+  - npm install -g grunt-cli
+  - npm install grunt --save-dev
+  - npm install grunt-war --save-dev
+
+script:
+  - ng lint
+  - ng build --prod --base-href="/componentSample/"
+  - grunt
+
+after_script:
+  - npm install coveralls
+  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+  - bash scripts/deploy.sh
+
+deploy:
+- provider: codedeploy
+  access_key_id: $ACCESS_KEY
+  secret_access_key: $SECRET_KEY
+  application: componentSample
+  deployment_group: componentSample
+  region: ap-northeast-1
+
+env:
+  global:
+  - GH_REF: github.com/m-sugizaki/componentSample.git
+ 

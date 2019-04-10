@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="title">メンバー編集</div>
+<!--  <form (ngSubmit)="saveMember()">  -->
+  <form (ngSubmit)="saveMember()" [formGroup]="memberForm">
+    <div class="edit-form">
+      <div class="edit-line">
+        <label>ID</label>
+        <span>{{ memberForm.controls.id.value }}</span>
+      </div>
+      <div class="edit-line">
+        <label>名前</label>
+        <div>
+          <input id="name" type="text" formControlName="name" required maxlength="20">
+          <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert">
+            <div *ngIf="name.errors.required">名前は入力必須項目です</div>
+            <div *ngIf="name.errors.maxlength">20文字以内で入力してください</div>
+          </div>
+        </div>
+      </div>
+      <div class="edit-line">
+        <label>パスワード</label>
+        <div>
+          <input type="text" formControlName="pass" required minlength="6">
+          <div *ngIf="pass.invalid && (pass.dirty || pass.touched)" class="alert">
+            <div *ngIf="pass.errors.required">パスワードは入力必須項目です</div>
+            <div *ngIf="pass.errors.minlength">6文字以上で入力してください</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <span class="button white" [routerLink]="['/members', memberForm.controls.id.value]">キャンセル</span>
+      <button class="button black" [class.disabled]="memberForm.invalid">保存</button>
+    </div>
+  </form>
+</div>

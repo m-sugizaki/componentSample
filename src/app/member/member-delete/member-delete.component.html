@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="title">メンバー削除</div>
+<!--  <form (ngSubmit)="saveMember()">  -->
+  <form (ngSubmit)="delMember()" [formGroup]="memberForm">
+    <div class="edit-form">
+      <div class="edit-line">
+        <label>ID</label>
+        <span>{{ memberForm.controls.id.value }}</span>
+  　　</div>
+      <div class="edit-line">
+        <label>名前</label>
+        <span>{{ memberForm.controls.name.value }}</span>
+      </div>
+      <div class="edit-line">
+        <label>パスワード</label>
+        <span>{{ memberForm.controls.pass.value }}</span>
+      </div>
+    </div>
+    <div class="footer">
+      <span class="button white" [routerLink]="['/members', memberForm.controls.id.value]">キャンセル</span>
+      <button class="button black" [class.disabled]="memberForm.invalid">削除</button>
+    </div>
+  </form>
+</div>
