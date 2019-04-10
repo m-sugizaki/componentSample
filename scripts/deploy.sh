@@ -28,6 +28,7 @@ package.json
 tests
 tmp" > .gitignore
 
+export TZ="Asia/Tokyo"
 DATESTR=`date +%Y%m%d-%H%M%S`
 echo ${DATESTR}
 
