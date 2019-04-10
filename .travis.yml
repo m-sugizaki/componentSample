@@ -17,10 +17,14 @@ addons:
 
 before_install:
   - npm install -g @angular/cli
+  - npm install -g grunt-cli
+  - npm install grunt --save-dev
+  - npm install grunt-war --save-dev
 
 script:
   - ng lint
   - ng build --prod --base-href="/componentSample/"
+  - grunt
 
 after_script:
   - npm install coveralls

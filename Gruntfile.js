@@ -9,7 +9,7 @@ grunt.loadNpmTasks('grunt-war');
       
   options: {
 //          war_dist_folder: 'C:/workspace/war', // warファイル生成先フォルダ
-          war_dist_folder: 'temp/', // warファイル生成先フォルダ
+          war_dist_folder: 'temp2/', // warファイル生成先フォルダ
           war_name: 'componentSample' // warファイル名
         },
         files: [
