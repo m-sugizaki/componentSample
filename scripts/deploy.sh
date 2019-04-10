@@ -28,11 +28,13 @@ package.json
 tests
 tmp" > .gitignore
 
+DATESTR=`date +%Y%m%d-%H%M%S`
+echo ${DATESTR}
 
 git init
 git config user.name ${USER_NAME}
 git config user.email ${USER_EMAIL}
 git branch
 git add .
-git commit --quiet -m "Deploy from travis"
+git commit --quiet -m "Deploy from travis ${DATESTR}"
 git push --force --quiet "https://${GITHUB_TOKEN}@${GH_REF}" master:release
