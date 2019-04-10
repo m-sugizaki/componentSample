@@ -13,7 +13,6 @@ if [[ "master" != "$TRAVIS_BRANCH" ]]; then
 fi
 
 echo "Create new .gitignore"
-
 rm -rf .git
 rm -r .gitignore
 
@@ -34,4 +33,4 @@ git config user.name "Travis CI"
 git config user.email "travis@example.com"
 git add .
 git commit --quiet -m "Deploy from travis"
-git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:release > /dev/null 2>&1
+git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:release
