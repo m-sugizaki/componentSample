@@ -1,5 +1,5 @@
 version: 0.0
 os: windows
 files:
-  - source: dist/componentSample
+  - source: /
     destination: c:\workspace\componentSample
