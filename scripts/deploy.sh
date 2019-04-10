@@ -7,8 +7,8 @@ if [[ "false" != "$TRAVIS_PULL_REQUEST" ]]; then
 	exit
 fi
 
-if [[ "develop" != "$TRAVIS_BRANCH" ]]; then
-	echo "Not on the 'develop' branch."
+if [[ "master" != "$TRAVIS_BRANCH" ]]; then
+	echo "Not on the 'master' branch."
 	exit
 fi
 
@@ -35,4 +35,4 @@ git config user.email ${USER_EMAIL}
 git branch
 git add .
 git commit --quiet -m "Deploy from travis"
-git push --force --quiet "https://${GITHUB_TOKEN}@${GH_REF}" develop:release
+git push --force --quiet "https://${GITHUB_TOKEN}@${GH_REF}" master:release
