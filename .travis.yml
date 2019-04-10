@@ -28,6 +28,7 @@ script:
   - grunt
 
 after_script:
+  - ls
   - npm install coveralls
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
   - ./scripts/deploy.sh
