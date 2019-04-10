@@ -31,6 +31,7 @@ tmp" > .gitignore
 git init
 git config user.name ${USER_NAME}
 git config user.email ${USER_EMAIL}
+git branch
 git add .
 git commit --quiet -m "Deploy from travis"
 git push --force --quiet "https://${GITHUB_TOKEN}@${GH_REF}" develop:release
