@@ -16,6 +16,8 @@ addons:
       - google-chrome-stable
 
 before_install:
+  - pwd
+  - ls
   - chmod 555 ./scripts/deploy.sh
   - npm install -g @angular/cli
   - npm install -g grunt-cli
@@ -29,13 +31,13 @@ script:
 
 after_script:
   - pwd
-  - ls
+  - ls -al
   - npm install coveralls
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
   - cd scripts
   - pwd
-  - ls
-  - sudo ./deploy.sh
+  - ls -al
+  - ./deploy.sh
 
 deploy:
 - provider: codedeploy
