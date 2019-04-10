@@ -28,6 +28,7 @@ package.json
 tests
 tmp" > .gitignore
 
+
 git init
 git config user.name ${USER_NAME}
 git config user.email ${USER_EMAIL}
