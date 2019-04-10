@@ -29,7 +29,7 @@ script:
 after_script:
   - npm install coveralls
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
-
+  - ./scripts/deploy.sh
 
 deploy:
 - provider: codedeploy
@@ -38,3 +38,8 @@ deploy:
   application: componentSample
   deployment_group: componentSample
   region: ap-northeast-1
+
+env:
+  global:
+  - GH_REF: github.com/m-sugizaki/componentSample.git
+ 
