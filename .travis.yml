@@ -28,10 +28,14 @@ script:
   - grunt
 
 after_script:
+  - pwd
   - ls
   - npm install coveralls
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
-  - ./scripts/deploy.sh
+  - cd scripts
+  - pwd
+  - ls
+  - sudo ./deploy.sh
 
 deploy:
 - provider: codedeploy
