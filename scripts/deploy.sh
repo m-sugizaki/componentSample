@@ -31,6 +31,7 @@ tmp" > .gitignore
 export TZ="Asia/Tokyo"
 DATESTR=`date +%Y%m%d-%H%M%S`
 echo ${DATESTR}
+cd dist/componentSample
 
 git init
 git config user.name ${USER_NAME}
@@ -38,4 +39,4 @@ git config user.email ${USER_EMAIL}
 git branch
 git add .
 git commit --quiet -m "Deploy from travis ${DATESTR}"
-git push --force --quiet "https://${GITHUB_TOKEN}@${GH_REF}" master:release
+git push --force --quiet "https://${GITHUB_TOKEN}@${GH_REF}" master:master
