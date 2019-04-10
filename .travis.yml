@@ -16,6 +16,7 @@ addons:
       - google-chrome-stable
 
 before_install:
+  - chmod 555 ./scripts/deploy.sh
   - npm install -g @angular/cli
   - npm install -g grunt-cli
   - npm install grunt --save-dev
