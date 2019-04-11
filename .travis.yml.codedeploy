@@ -1,0 +1,35 @@
+language: node_js
+node_js:
+  - "10.15.3"
+
+dist: trusty
+
+cache:
+  directories:
+    - node_modules
+
+branches:
+  only:
+    - master
+
+before_install:
+  - echo "Pass -before install-"
+
+script:
+  - echo "Pass -script-"
+
+after_script:
+  - echo "Pass -after install-"
+
+deploy:
+- provider: codedeploy
+  access_key_id: $ACCESS_KEY
+  secret_access_key: $SECRET_KEY
+  application: componentSample
+  deployment_group: componentSample
+  region: ap-northeast-1
+
+env:
+  global:
+  - GH_REF: github.com/m-sugizaki/tmpRepository.git
+ 

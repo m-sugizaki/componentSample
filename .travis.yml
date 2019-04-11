@@ -20,7 +20,6 @@ branches:
     - master
 
 before_install:
-  - ls -al
   - chmod 555 ./scripts/deploy.sh
   - npm install -g @angular/cli
 
@@ -31,16 +30,15 @@ script:
 after_script:
   - npm install coveralls
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
-  - ls -al
   - bash scripts/deploy.sh
 
 deploy:
-- provider: codedeploy
-  access_key_id: $ACCESS_KEY
-  secret_access_key: $SECRET_KEY
-  application: componentSample
-  deployment_group: componentSample
-  region: ap-northeast-1
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist/componentSample
+  on:
+    branch: master
 
 env:
   global:
