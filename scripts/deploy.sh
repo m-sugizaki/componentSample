@@ -39,4 +39,4 @@ git config user.email ${USER_EMAIL}
 git branch
 git add .
 git commit --quiet -m "Deploy from travis ${DATESTR}"
-git push --force --quiet "https://${GITHUB_TOKEN}@${GH_REF}" master:master
+git push --force --quiet "https://${GITHUB_TOKEN}@${GH_REF}" origin master:master
