@@ -2,4 +2,4 @@ version: 0.0
 os: windows
 files:
   - source: /
-    destination: c:\workspace\componentSample
+    destination: C:\apache-tomcat-9.0.7\webapps\componentSample
