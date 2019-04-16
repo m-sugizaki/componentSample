@@ -32,8 +32,8 @@ export TZ="Asia/Tokyo"
 DATESTR=`date +%Y%m%d-%H%M%S`
 echo ${DATESTR}
 
-cp -p ./.travis.yml.codedeploy dist/componentSample/.travis.yml
-cp -p ./appspec.yml dist/componentSample/appspec.yml
+cp -p ./.travis.yml.codedeploy dist/.travis.yml
+cp -p ./appspec.yml dist/appspec.yml
 cd dist
 
 zip -r componentSample_${DATESTR}.zip ./componentSample/

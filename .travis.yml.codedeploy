@@ -17,6 +17,8 @@ before_install:
 
 script:
   - echo "Pass -script-"
+  - pwd
+  - ls -al
 
 after_script:
   - echo "Pass -after install-"
