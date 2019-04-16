@@ -34,9 +34,9 @@ echo ${DATESTR}
 
 cp -p ./.travis.yml.codedeploy dist/componentSample/.travis.yml
 cp -p ./appspec.yml dist/componentSample/appspec.yml
-cd dist/componentSample
+cd dist
 
-zip -r componentSample_${DATESTR}.zip ./
+zip -r componentSample_${DATESTR}.zip ./componentSample/
 
 git init
 git config user.name ${USER_NAME}
