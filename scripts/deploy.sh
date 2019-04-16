@@ -36,6 +36,14 @@ cp -p ./.travis.yml.codedeploy dist/.travis.yml
 cp -p ./appspec.yml dist/appspec.yml
 cd dist
 
+echo ".bowerrc
+.editorconfig
+README.md
+bin
+node_modules
+package.json
+tmp" > .gitignore
+
 zip -r componentSample_${DATESTR}.zip ./componentSample/
 
 git init
