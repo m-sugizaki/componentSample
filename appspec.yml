@@ -3,5 +3,5 @@ os: windows
 files:
   - source: *.zip
     destination: C:\Workspace\componentSample
-  - source: componentSmaple
+  - source: componentSample
     destination: C:\apache-tomcat-9.0.7\webapps\componentSample
