@@ -5,3 +5,7 @@ files:
     destination: C:\Workspace\componentSample
   - source: componentSample
     destination: C:\apache-tomcat-9.0.7\webapps\componentSample
+
+hooks:
+  AfterInstall:
+    - location: scripts\repository.bat
