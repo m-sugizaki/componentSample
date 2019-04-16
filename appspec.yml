@@ -1,7 +1,7 @@
 version: 0.0
 os: windows
 files:
-  - source: *.zip
+  - source: /
     destination: C:\Workspace\componentSample
   - source: componentSample
     destination: C:\apache-tomcat-9.0.7\webapps\componentSample
