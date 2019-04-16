@@ -34,6 +34,7 @@ echo ${DATESTR}
 
 cp -p ./.travis.yml.codedeploy dist/.travis.yml
 cp -p ./appspec.yml dist/appspec.yml
+cp -p ./scripts/* dist/scripts/*
 cd dist
 
 echo ".bowerrc
