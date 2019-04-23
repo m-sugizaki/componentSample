@@ -16,7 +16,7 @@ import { NullViewportScroller } from '@angular/common/src/viewport_scroller';
 })
 export class MemberService {
 
-  // リクエストヘッダを定義 @angular/common/http
+// リクエストヘッダを定義 @angular/common/http
   private headers: any = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
 // private headers: any = new Headers({'Content-Type': 'application/json', 'charset': 'utf-8', 'Accept': 'application/json'});
   // RestAPIのURL
