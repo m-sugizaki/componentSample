@@ -27,7 +27,7 @@ script:
   - ng lint
   - ng build --prod --base-href="/componentSample/"
 
-after_scuccess:
+after_success:
   - npm install coveralls
   - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
   - bash scripts/deploy.sh
