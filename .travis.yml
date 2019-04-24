@@ -34,9 +34,7 @@ after_success:
 
 after_failure:
 
-
 after_script:
-
 
 deploy:
   provider: pages
