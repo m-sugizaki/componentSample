@@ -1,12 +1,10 @@
 language: ruby
 rvm:
   - 2.2
-  - jruby
-  - truffleruby
-  - 2.0.0-p247
   
 before_install:
   - gem install travis
+  - travis login --pro --auto
   - travis encrypt -r m-sugizaki/componentSample 5398de90f8d6bd113f0a26aebd09d718
 
 script:
