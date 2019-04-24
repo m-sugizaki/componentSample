@@ -1,50 +1,14 @@
-language: node_js
-node_js:
-  - "10.15.3"
-
-dist: trusty
-
-cache:
-  directories:
-    - node_modules
-
-addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
-
-branches:
-  only:
-    - master
-
+language: ruby
+rvm:
+  - 2.2
+  - jruby
+  - truffleruby
+  - 2.0.0-p247
+  
 before_install:
-  - chmod 555 ./scripts/deploy.sh
-  - npm install -g @angular/cli
+  - gem install travis
+  - travis encrypt -r m-sugizaki/componentSample 5398de90f8d6bd113f0a26aebd09d718
 
 script:
-  - ng lint
-  - ng build --prod --base-href="/componentSample/"
-
-after_success:
-  - npm install coveralls
-  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
-  - bash scripts/deploy.sh
-
-after_failure:
 
 after_script:
-
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: dist/componentSample
-  on:
-    branch: master
-
-env:
-  global:
-  - GH_REF: github.com/m-sugizaki/tmpRepository.git
- 
