@@ -1,4 +1,4 @@
-## TravisCI Vuild Status：[![Build Status](https://travis-ci.org/m-sugizaki/componentSample.svg?branch=master)](https://travis-ci.org/m-sugizaki/componentSample)
+## TravisCI Build Status：[![Build Status](https://travis-ci.org/m-sugizaki/componentSample.svg?branch=master)](https://travis-ci.org/m-sugizaki/componentSample)
 
 # ComponentSample
 
