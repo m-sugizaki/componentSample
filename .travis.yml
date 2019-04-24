@@ -4,7 +4,7 @@ rvm:
   
 before_install:
   - gem install travis
-  - travis login --pro --auto
+  - travis login --pro --github-token
   - travis encrypt -r m-sugizaki/componentSample 5398de90f8d6bd113f0a26aebd09d718
 
 script:
