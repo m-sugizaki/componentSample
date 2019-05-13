@@ -1,4 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms'; // karma
+import { RouterTestingModule } from '@angular/router/testing'; // karma
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http'; // karma
 
 import { MemberEditComponent } from './member-edit.component';
 
@@ -8,6 +11,7 @@ describe('MemberEditComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [RouterTestingModule, ReactiveFormsModule, HttpClientModule], // karma
       declarations: [ MemberEditComponent ]
     })
     .compileComponents();

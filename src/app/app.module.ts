@@ -22,9 +22,10 @@ import { MemberListComponent } from './member/member-list/member-list.component'
 import { MemberDetailComponent } from './member/member-detail/member-detail.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MemberEditComponent } from './member/member-edit/member-edit.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MemberNewComponent } from './member/member-new/member-new.component';
 import { MemberDeleteComponent } from './member/member-delete/member-delete.component';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [

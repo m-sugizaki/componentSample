@@ -3,6 +3,7 @@ import { Member } from '../../member';
 import { MemberService } from '../../services/member.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
+// import { FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-member-delete',

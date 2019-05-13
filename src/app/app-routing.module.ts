@@ -5,6 +5,7 @@ import { MemberDetailComponent } from './member/member-detail/member-detail.comp
 import { MemberEditComponent } from './member/member-edit/member-edit.component';
 import { MemberNewComponent } from './member/member-new/member-new.component';
 import { MemberDeleteComponent } from './member/member-delete/member-delete.component';
+// import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // karma
 
 const routes: Routes = [
   { path: 'members', component: MemberListComponent },
@@ -16,7 +17,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    useHash: true,
+  }),
+  //  FormsModule,
+  //  ReactiveFormsModule,
+  ],
   exports: [RouterModule],
   providers: []
 })

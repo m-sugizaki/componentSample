@@ -1,7 +1,6 @@
 <div class="container">
   <div class="title">メンバー削除</div>
-<!--  <form (ngSubmit)="saveMember()">  -->
-  <form (ngSubmit)="delMember()" [formGroup]="memberForm">
+  <form [formGroup]="memberForm" (ngSubmit)="delMember()">
     <div class="edit-form">
       <div class="edit-line">
         <label>ID</label>
