@@ -20,6 +20,7 @@ module.exports = function (config) {
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
+      require('karma-junit-reporter'),
       require('karma-coverage-istanbul-reporter'),
       require('@angular-devkit/build-angular/plugins/karma')
     ],
@@ -46,14 +47,16 @@ module.exports = function (config) {
         return path.replace(/\.ts$/, '.js');
       }
     },
-    reporters: ['progress', 'kjhtml'],
+    reporters: ['progress', 'kjhtml', 'junit'],
+    junitReporter: {
+      outputDir: 'report'
+    },
     port: 9876,
     colors: true,
     logLevel: config.LOG_DEBUG,
     // logLevel: config.LOG_INFO,
     autoWatch: true,
-    // browsers: ['Chrome'],
-    browsers: ['ChromeHeadless'],
+    browsers: ['Chrome', 'ChromeHeadless'],
     //browsers: ['PhantomJS'],
     singleRun: false,
     restartOnFileChange: true

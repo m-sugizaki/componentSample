@@ -30,6 +30,7 @@ before_install:
 
 script:
   - ng lint
+  - ng test --code-coverage
   - ng build --prod --base-href="/componentSample/"
 
 after_success:
