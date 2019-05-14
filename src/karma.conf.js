@@ -11,6 +11,7 @@ module.exports = function (config) {
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
       require('karma-spec-reporter'),
+      require('karma-mocha-reporter'),
       require('karma-junit-reporter'),
       require('karma-typescript-preprocessor'),
       require('@angular-devkit/build-angular/plugins/karma')
@@ -44,14 +45,13 @@ module.exports = function (config) {
       fixWebpackSourcePaths: true
     },
     // reporters: ['progress', 'kjhtml'], // karma-spec-reporter使用
-    reporters: ['spec', 'kjhtml', 'junit'],
+    reporters: ['spec', 'junit', 'mocha'],
     junitReporter: {
       outputDir: '../report/unit_test',
-      outputFile: 'test-report.xml',
     },
     port: 9876,
     colors: true,
-    logLevel: config.LOG_DEBUG,
+    logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['Chrome'],
     // karma for trvis
@@ -61,13 +61,14 @@ module.exports = function (config) {
         flags: ['--no-sandbox']
       }
     },
-    singleRun: true, // 一度だけ実行する（テスト後にビルドする場合など）
+    singleRun: false, // true : 一度だけ実行する（テスト後にビルドする場合など）
     restartOnFileChange: true
   };
 
   // karma for trvis
   if(process.env.TRAVIS){
     configuration.browsers = ['Chrome_travis_ci'];
+    configuration.singleRun = true; // 一度だけ実行する（テスト後にビルドする場合など）
     // configuration.reporters = configuration.reporters.concat(['coverage', 'coveralls']);
     // configuration.coverageReporter = {
     //   type : 'lcovonly',
