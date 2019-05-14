@@ -34,7 +34,7 @@ before_install:
 
 script:
   - ng lint
-  - node_modules/karma/bin/karma start karma.conf.js --single-run
+  - node_modules/karma/bin/karma start src/karma.conf.js --single-run
   # - ng test --code-coverage --single-run
   - ng build --prod --base-href="/componentSample/"
 
@@ -51,7 +51,8 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  local_dir: dist/componentSample
+  local_dir: coverage/componentSample
+  # local_dir: dist/componentSample
   on:
     branch: master
 
