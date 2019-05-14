@@ -2,7 +2,8 @@
 // https://karma-runner.github.io/1.0/config/configuration-file.html
 
 module.exports = function (config) {
-  config.set({
+//  config.set({
+  var configration = {
     basePath: '',
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
     files: [
@@ -68,7 +69,8 @@ module.exports = function (config) {
     //browsers: ['PhantomJS'],
     singleRun: false,
     restartOnFileChange: true
-  });
+ // });
+  };
 
   // karma for trvis
   if(process.env.TRAVIS){
