@@ -33,7 +33,7 @@ module.exports = function (config) {
         flags: ['--no-sandbox']
       }
     },
-    singleRun: false,
+    singleRun: true, // 一度だけ実行する（テスト後にビルドする場合など）
     restartOnFileChange: true
   };
 

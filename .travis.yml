@@ -34,8 +34,7 @@ before_install:
 
 script:
   - ng lint
-  - node_modules/karma/bin/karma start src/karma.conf.js --single-run
-  # - ng test --code-coverage --single-run
+  - ng test --code-coverage
   - ng build --prod --base-href="/componentSample/"
 
 after_success:
