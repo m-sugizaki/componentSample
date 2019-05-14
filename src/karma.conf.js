@@ -6,13 +6,13 @@ module.exports = function (config) {
     basePath: '',
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
     files: [
-      'app/calc/calc-units.spec.ts'
-    ],
-    // list of files to exclude
-    exclude: [
+//      'app/calc/calc-units.spec.ts'
       'app/*.ts',
       'app/member/*.ts',
       'app/services/*.ts'
+    ],
+    // list of files to exclude
+    exclude: [
     ],
     plugins: [
       'karma-typescript-preprocessor', // add
@@ -57,8 +57,28 @@ module.exports = function (config) {
     // logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['Chrome', 'ChromeHeadless'],
+    // karma for trvis
+    customLaunchers: {
+      Chrome_travis_ci: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
+    },
+  
     //browsers: ['PhantomJS'],
     singleRun: false,
     restartOnFileChange: true
   });
+
+  // karma for trvis
+  if(process.env.TRAVIS){
+    configuration.browsers = ['Chrome_travis_ci'];
+    // configuration.reporters = configuration.reporters.concat(['coverage', 'coveralls']);
+    // configuration.coverageReporter = {
+    //   type : 'lcovonly',
+    //   dir : 'coverage/'
+    // };
+  }
+  // karma for trvis
+  config.set(configuration);
 };

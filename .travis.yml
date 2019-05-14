@@ -27,6 +27,10 @@ notifications:
 before_install:
   - chmod 555 ./scripts/deploy.sh
   - npm install -g @angular/cli
+  # karma for travis
+  - export CHROME_BIN=chromium-browser
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
 
 script:
   - ng lint
