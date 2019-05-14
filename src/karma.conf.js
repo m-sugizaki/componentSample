@@ -46,7 +46,8 @@ module.exports = function (config) {
     // reporters: ['progress', 'kjhtml'], // karma-spec-reporter使用
     reporters: ['spec', 'kjhtml', 'junit'],
     junitReporter: {
-      outputDir: '../report/unit_test'
+      outputDir: '../report/unit_test',
+      outputFile: 'test-report.xml',
     },
     port: 9876,
     colors: true,
