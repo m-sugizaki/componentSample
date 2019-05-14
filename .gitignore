@@ -2,9 +2,10 @@
 
 # compiled output
 /dist
+/report
+/out-tsc
 /tmp
 /temp
-/out-tsc
 # Only exists if Bazel was run
 /bazel-out
 

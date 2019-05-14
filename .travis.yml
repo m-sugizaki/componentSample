@@ -50,7 +50,7 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  local_dir: coverage/componentSample
+  local_dir: report
   # local_dir: dist/componentSample
   on:
     branch: master
