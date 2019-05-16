@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 set -e
 echo "Create RESULT index.html"
-cd report/unit_test
-FN=`ls`
+cd report
+FN=`ls unit_test/*.xml`
 echo ${FN}
-cd ../../
+cd ../
 echo "<html>
 <head>
 <title>TravisCIビルド結果</title>
