@@ -36,7 +36,7 @@ before_install:
 before_script:
   - ng lint
   - ng test --code-coverage
-  - ng e2e
+  - ng e2e --protractor-config='e2e/protractor.conf.js'
 
 script:
   - ng build --prod --base-href="/componentSample/"
