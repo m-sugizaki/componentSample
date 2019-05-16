@@ -14,16 +14,16 @@
 const { SpecReporter } = require('jasmine-spec-reporter');
 
 exports.config = {
-  allScriptsTimeout: 11000,
+  //allScriptsTimeout: 11000,
+  allScriptsTimeout: timeout_in_millis,
   specs: [
     './src/**/*.e2e-spec.ts'
   ],
   capabilities: {
     'browserName': 'chrome',
     chromeOptions: {
-      args: [ "--headless", "--disable-gpu", "--no-sandbox"
-      // "--window-size=800,600" 
-      ]
+      args: [ "--no-sandbox" ]
+      // args: [ "--headless", "--disable-gpu", "--no-sandbox" ]
     } 
   },
   directConnect: true,
