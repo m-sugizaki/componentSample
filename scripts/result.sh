@@ -4,8 +4,10 @@ set -e
 
 echo "Create RESULT index.html"
 
-FN=`ls ./report/unit_test/*`
+cd ./report/unit_test/
+FN=`ls`
 echo ${FN}
+cd ../../
 
 echo "<html>
 <head>
