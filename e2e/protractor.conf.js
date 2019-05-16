@@ -2,9 +2,11 @@
 // https://github.com/angular/protractor/blob/master/lib/config.ts
 
 // ローカル環境とTravis環境で設定を変える例
-var defBrowser = 'chrome'; // This should be local webserver
+var defBrowser = 'chrome'; 
+var defDirectConnect = true; 
 if (process.env.TRAVIS) {
-  defBrowser = 'phantomjs'; // Change to your dev server
+  defBrowser = 'phantomjs';
+  defDirectConnect = false;
 }
 //
 // exports.config = {
@@ -26,7 +28,7 @@ exports.config = {
     //   // args: [ "--headless", "--disable-gpu", "--no-sandbox" ]
     // } 
   },
-  directConnect: true,
+  directConnect: defDirectConnect,
   baseUrl: 'http://localhost:4200/',
   framework: 'jasmine',
   jasmineNodeOpts: {
