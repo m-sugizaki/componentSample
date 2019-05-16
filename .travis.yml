@@ -39,11 +39,6 @@ before_script:
   - ng lint
   - ng test --code-coverage
   - ng e2e
-  # sourcelabs for travis
-  # - npm run build # アプリケーションをbuild
-  # - node travis-server.js & # buildしたアプリケーションを起動
-  # - protractor e2e/protractor.conf.travis.js # テストを実行
-  # - ng e2e --protractor-config='e2e/protractor.conf.travis.js'
 
 script:
   - ng build --prod --base-href="/componentSample/"
@@ -52,6 +47,7 @@ after_success:
   # - npm install coveralls
   # - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
   - bash scripts/deploy.sh
+  - bash scripts/result.sh # テスト結果のindexを作成
 
 after_failure:
 
