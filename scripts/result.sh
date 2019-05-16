@@ -5,6 +5,7 @@ set -e
 echo "Create RESULT index.html"
 
 FN=`ls ./report/unit_test/*`
+echo ${FN}
 
 echo "<html>
 <head>
@@ -14,8 +15,8 @@ echo "<html>
 <h1>TravisCIビルド結果</h1>
 <ul>
 <li>ユニットテスト［<a href='./unit_test/${FN}'>view</a>］</li>
-<li>カバレッジ［<a href='./coverage/'>view</a>］</li>
-<li>E2Eテスト［<a href='./e2e_test/'>view</a>］</li>
+<li>カバレッジ［<a href='./coverage/index.html'>view</a>］</li>
+<li>E2Eテスト［<a href='./e2e_test/ProtractorTestReport.html'>view</a>］</li>
 </ul>
 </body>
 </html>" > ./report/index.html
