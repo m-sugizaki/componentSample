@@ -2,10 +2,10 @@
 // https://github.com/angular/protractor/blob/master/lib/config.ts
 
 // ローカル環境とTravis環境で設定を変える例
-// var url = 'http://localhost:3000/'; // This should be local webserver
-// if (process.env.TRAVIS) {           
-//   url = 'http://yourdevelopmentserver' // Change to your dev server
-// }
+var defBrowser = 'chrome'; // This should be local webserver
+if (process.env.TRAVIS) {
+  defBrowser = 'phantomjs'; // Change to your dev server
+}
 //
 // exports.config = {
 //   baseUrl: url
@@ -14,17 +14,17 @@
 const { SpecReporter } = require('jasmine-spec-reporter');
 
 exports.config = {
-  //allScriptsTimeout: 11000,
-  allScriptsTimeout: 1000000,
+  allScriptsTimeout: 11000,
   specs: [
     './src/**/*.e2e-spec.ts'
   ],
   capabilities: {
-    'browserName': 'chrome',
-    chromeOptions: {
-      args: [ "--no-sandbox" ]
-      // args: [ "--headless", "--disable-gpu", "--no-sandbox" ]
-    } 
+    'browserName': defBrowser,
+    // 'browserName': 'chrome',
+    // chromeOptions: {
+    //   args: [ "--no-sandbox" ]
+    //   // args: [ "--headless", "--disable-gpu", "--no-sandbox" ]
+    // } 
   },
   directConnect: true,
   baseUrl: 'http://localhost:4200/',
