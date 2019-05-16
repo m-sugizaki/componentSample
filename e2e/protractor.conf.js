@@ -16,17 +16,18 @@
 const { SpecReporter } = require('jasmine-spec-reporter');
 
 exports.config = {
-  allScriptsTimeout: 11000,
+  allScriptsTimeout: 20000,
+  // allScriptsTimeout: 11000,
   specs: [
     './src/**/*.e2e-spec.ts'
   ],
   capabilities: {
     // 'browserName': defBrowser,
     'browserName': 'chrome',
-    // chromeOptions: {
+    chromeOptions: {
     //   args: [ "--no-sandbox" ]
-    //   // args: [ "--headless", "--disable-gpu", "--no-sandbox" ]
-    // } 
+      args: [ "--headless", "--disable-gpu", "--no-sandbox" ]
+    } 
   },
   directConnect: true,
   // directConnect: defDirectConnect,
@@ -41,6 +42,7 @@ exports.config = {
     require('ts-node').register({
       project: require('path').join(__dirname, './tsconfig.e2e.json')
     });
+    browser.waitForAngularEnabled(false); // timeout
     jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
 
     //Create XMLresult for HTMLReport

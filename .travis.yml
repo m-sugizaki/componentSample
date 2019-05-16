@@ -15,7 +15,7 @@ addons:
     packages:
       - google-chrome-stable
 
-  sauce_connect: true
+  # sauce_connect: true
 
 branches:
   only:
@@ -38,11 +38,12 @@ before_install:
 before_script:
   - ng lint
   - ng test --code-coverage
+  - ng e2e
   # sourcelabs for travis
   # - npm run build # アプリケーションをbuild
   # - node travis-server.js & # buildしたアプリケーションを起動
   # - protractor e2e/protractor.conf.travis.js # テストを実行
-  - ng e2e --protractor-config='e2e/protractor.conf.travis.js'
+  # - ng e2e --protractor-config='e2e/protractor.conf.travis.js'
 
 script:
   - ng build --prod --base-href="/componentSample/"
