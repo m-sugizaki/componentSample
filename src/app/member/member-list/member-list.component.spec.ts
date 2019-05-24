@@ -4,6 +4,8 @@ import { RouterTestingModule } from '@angular/router/testing'; // karma
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http'; // karma
 
 import { MemberListComponent } from './member-list.component';
+import { Member } from '../../member';
+import { MemberService } from '../../services/member.service';
 
 describe('MemberListComponent', () => {
   let component: MemberListComponent;
@@ -29,6 +31,11 @@ describe('MemberListComponent', () => {
 
   it('get members', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('getMembers 関数', () => {
+    expect(component).toBeTruthy();
+//    const target = new MemberListComponent();
   });
 
 });
