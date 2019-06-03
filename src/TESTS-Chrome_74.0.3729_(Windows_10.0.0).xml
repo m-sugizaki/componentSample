@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<testsuite name="Chrome 74.0.3729 (Windows 10.0.0)" package="" timestamp="2019-06-03T02:51:15" id="0" hostname="CA47129D" tests="9" errors="0" failures="0" time="0.339">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36"/>
+  </properties>
+  <testcase name="AppComponent should create the app" time="0.044" classname="Chrome_74_0_3729_(Windows_10_0_0).AppComponent"/>
+  <testcase name="AppComponent should have as title 'メンバー一覧画面'" time="0.015" classname="Chrome_74_0_3729_(Windows_10_0_0).AppComponent"/>
+  <testcase name="MemberDeleteComponent should create" time="0.053" classname="Chrome_74_0_3729_(Windows_10_0_0).MemberDeleteComponent"/>
+  <testcase name="MemberDetailComponent should create" time="0.029" classname="Chrome_74_0_3729_(Windows_10_0_0).MemberDetailComponent"/>
+  <testcase name="MemberEditComponent should create" time="0.056" classname="Chrome_74_0_3729_(Windows_10_0_0).MemberEditComponent"/>
+  <testcase name="MemberListComponent should create" time="0.032" classname="Chrome_74_0_3729_(Windows_10_0_0).MemberListComponent"/>
+  <testcase name="MemberListComponent get members" time="0.035" classname="Chrome_74_0_3729_(Windows_10_0_0).MemberListComponent"/>
+  <testcase name="MemberListComponent getMembers 関数" time="0.029" classname="Chrome_74_0_3729_(Windows_10_0_0).MemberListComponent"/>
+  <testcase name="MemberNewComponent should create" time="0.046" classname="Chrome_74_0_3729_(Windows_10_0_0).MemberNewComponent"/>
+  <system-out>
+    <![CDATA[Chrome 74.0.3729 (Windows 10.0.0) LOG: HttpHeaders{normalizedNames: Map{}, lazyUpdate: [Object{name: ..., value: ..., op: ...}], headers: Map{}, lazyInit: HttpHeaders{normalizedNames: Map{}, lazyUpdate: null, headers: Map{}}}
+,Chrome 74.0.3729 (Windows 10.0.0) LOG: HttpHeaders{normalizedNames: Map{}, lazyUpdate: [Object{name: ..., value: ..., op: ...}], headers: Map{}, lazyInit: HttpHeaders{normalizedNames: Map{}, lazyUpdate: null, headers: Map{}}}
+,Chrome 74.0.3729 (Windows 10.0.0) LOG: HttpHeaders{normalizedNames: Map{}, lazyUpdate: [Object{name: ..., value: ..., op: ...}], headers: Map{}, lazyInit: HttpHeaders{normalizedNames: Map{}, lazyUpdate: null, headers: Map{}}}
+,Chrome 74.0.3729 (Windows 10.0.0) LOG: HttpHeaders{normalizedNames: Map{}, lazyUpdate: [Object{name: ..., value: ..., op: ...}], headers: Map{}, lazyInit: HttpHeaders{normalizedNames: Map{}, lazyUpdate: null, headers: Map{}}}
+,Chrome 74.0.3729 (Windows 10.0.0) LOG: [Object{id: 1, name: '杉崎　睦', pass: 'sugisugi'}, Object{id: 2, name: '中森健', pass: '01234567'}]
+,Chrome 74.0.3729 (Windows 10.0.0) LOG: HttpHeaders{normalizedNames: Map{}, lazyUpdate: [Object{name: ..., value: ..., op: ...}], headers: Map{}, lazyInit: HttpHeaders{normalizedNames: Map{}, lazyUpdate: null, headers: Map{}}}
+,Chrome 74.0.3729 (Windows 10.0.0) LOG: [Object{id: 1, name: '杉崎　睦', pass: 'sugisugi'}, Object{id: 2, name: '中森健', pass: '01234567'}]
+,Chrome 74.0.3729 (Windows 10.0.0) LOG: HttpHeaders{normalizedNames: Map{}, lazyUpdate: [Object{name: ..., value: ..., op: ...}], headers: Map{}, lazyInit: HttpHeaders{normalizedNames: Map{}, lazyUpdate: null, headers: Map{}}}
+,Chrome 74.0.3729 (Windows 10.0.0) LOG: [Object{id: 1, name: '杉崎　睦', pass: 'sugisugi'}, Object{id: 2, name: '中森健', pass: '01234567'}]
+
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>

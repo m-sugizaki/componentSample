@@ -14,6 +14,7 @@ module.exports = function (config) {
       require('karma-mocha-reporter'),
       require('karma-junit-reporter'),
       require('karma-typescript-preprocessor'),
+      require('karma-htmlfile-reporter'),
       require('@angular-devkit/build-angular/plugins/karma')
     ],
     client: {
@@ -45,10 +46,23 @@ module.exports = function (config) {
       fixWebpackSourcePaths: true
     },
     // reporters: ['progress', 'kjhtml'], // karma-spec-reporter使用
-    reporters: ['spec', 'junit', 'mocha'],
-    junitReporter: {
+    // reporters: ['spec', 'junit', 'mocha'], // htmlfile reporter使用
+    reporters: ['spec', 'mocha', 'html'],
+    htmlReporter: {
+      outputFile: '../report/unit_test/units.html',
+            
+      // Optional
+      pageTitle: 'Unit Tests',
+      subPageTitle: 'A sample project description',
+      groupSuites: true,
+      useCompactStyle: true,
+      useLegacyStyle: true,
+      showOnlyFailed: false
+    },
+/*    junitReporter: {
       outputDir: '../report/unit_test',
     },
+ */
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
