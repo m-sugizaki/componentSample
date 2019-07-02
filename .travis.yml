@@ -51,6 +51,7 @@ after_success:
   # - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
   - bash scripts/deploy.sh
   - bash scripts/result.sh # テスト結果のindexを作成
+  - bash scripts/AgileAPIScript_Run/agileApiObjectHandleBash.sh 1 US557 Defined # RallyAPIテスト
 
 after_failure:
 
