@@ -19,7 +19,7 @@ echo ${CURDIR}
 US=`git log -1 | grep US`
 echo ${US}
 export TZ="Asia/Tokyo"
-DTSTR=`date "+%Y/%m/%d %H:%M"`
+DTSTR=`date "+%Y/%m/%d-%H:%M"`
 echo ${DTSTR}
 TXT="componentSampleJobSUCCESS!!!(${DTSTR})"
 echo ${TXT}
