@@ -51,10 +51,18 @@ after_success:
   # - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
   - bash scripts/deploy.sh
   - bash scripts/result.sh # テスト結果のindexを作成
+  - us = `git log -1 | grep US`
+  - echo $us
+  - bash today=`date "+%Y/%m/%d %R"`
+  - echo $today
   - cd scripts/AgileAPIScript_Run # RallyAPIテスト
   - bash agileApiObjectHandleBash.sh 1 US557 Defined # RallyAPIテスト
 
 after_failure:
+  - us = `git log -1 | grep US`
+  - echo $us
+  - bash today=`date "+%Y/%m/%d %R"`
+  - echo $today
 
 after_script:
 
