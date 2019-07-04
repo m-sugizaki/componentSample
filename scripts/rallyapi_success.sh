@@ -9,7 +9,7 @@ US=`git log -1 | grep US`
 echo ${US}
 
 export TZ="Asia/Tokyo"
-DATESTR=`date +%Y%m%d %H%M`
+DATESTR=`date "+%Y%m%d %H%M"`
 echo ${DATESTR}
 
 TXT="componentSample job SUCCESS!!! (${DATESTR})"
