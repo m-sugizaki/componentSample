@@ -31,7 +31,7 @@ notifications:
 
 before_install:
   - chmod 555 ./scripts/deploy.sh
-  - chmod 555 ./scripts/rallyapi_success.sh
+  - chmod 555 ./scripts/jobfail.sh
   - npm install -g @angular/cli
   # karma for travis
   - export CHROME_BIN=chromium-browser
