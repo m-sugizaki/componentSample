@@ -12,6 +12,19 @@ if [[ "master" != "$TRAVIS_BRANCH" ]]; then
 	exit
 fi
 
+echo "Prepare for Update Rally"
+echo "- set variables"
+CURDIR=`pwd`
+US=`git log -1 | grep US`
+echo ${US}
+export TZ="Asia/Tokyo"
+DTSTR=`date "+%Y/%m/%d %H:%M"`
+echo ${DTSTR}
+TXT="componentSample job SUCCESS!!! (${DTSTR})"
+echo ${TXT}
+ACT=2
+echo ${ACT}
+
 echo "Create new .gitignore"
 rm -rf .git
 rm -r .gitignore
@@ -55,3 +68,10 @@ git branch
 git add .
 git commit --quiet -m "Deploy from travis ${DATESTR}"
 git push --force --quiet "https://${GITHUB_TOKEN}@${GH_REF}" master:master
+
+echo "Update Rally"
+cd scripts/AgileAPIScript_Run
+./agileApiObjectHandleBash.sh ${ACT} ${US} ${TXT}
+
+cd ${CURDIR}
+pwd
