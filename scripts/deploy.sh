@@ -15,6 +15,7 @@ fi
 echo "Prepare for Update Rally"
 echo "- set variables"
 CURDIR=`pwd`
+echo ${CURDIR}
 US=`git log -1 | grep US`
 echo ${US}
 export TZ="Asia/Tokyo"
@@ -70,6 +71,7 @@ git commit --quiet -m "Deploy from travis ${DATESTR}"
 git push --force --quiet "https://${GITHUB_TOKEN}@${GH_REF}" master:master
 
 echo "Update Rally"
+cd ${CURDIR}
 cd scripts/AgileAPIScript_Run
 ./agileApiObjectHandleBash.sh ${ACT} ${US} ${TXT}
 
