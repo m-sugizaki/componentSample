@@ -21,7 +21,7 @@ echo ${US}
 export TZ="Asia/Tokyo"
 DTSTR=`date "+%Y/%m/%d %H:%M"`
 echo ${DTSTR}
-TXT="componentSample job SUCCESS!!! (${DTSTR})"
+TXT="componentSampleJobSUCCESS!!!(${DTSTR})"
 echo ${TXT}
 ACT=2
 echo ${ACT}
@@ -74,7 +74,7 @@ echo "Update Rally"
 cd ${CURDIR}
 cd scripts/AgileAPIScript_Run
 chmod 555 ./agileApiObjectHandleBash.sh 
-./agileApiObjectHandleBash.sh ${ACT} ${US} "${TXT}"
+./agileApiObjectHandleBash.sh ${ACT} ${US} ${TXT}
 
 cd ${CURDIR}
 pwd
