@@ -4,6 +4,10 @@ node_js:
 
 dist: trusty
 
+sudo: required
+jdk:
+  - oraclejdk8
+
 cache:
   directories:
     - node_modules
@@ -18,6 +22,8 @@ notifications:
 
 before_install:
   - echo "Pass -before install-"
+  - chmod 555 ./scripts/jobsccess.sh
+  - chmod 555 ./scripts/jobfail2.sh
 
 script:
   - echo "Pass -script-"
@@ -26,6 +32,12 @@ script:
 
 after_script:
   - echo "Pass -after install-"
+
+after_success:
+  - bash scripts/jobsuccess.sh
+
+after_failure:
+  - bash scripts/jobfail2.sh
 
 deploy:
 - provider: codedeploy

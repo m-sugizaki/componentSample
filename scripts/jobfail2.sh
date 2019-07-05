@@ -10,7 +10,7 @@ echo ${US}
 export TZ="Asia/Tokyo"
 DTSTR=`date "+%Y/%m/%d-%H:%M"`
 echo ${DTSTR}
-TXT="componentSampleJobFAILURE!!!(${DTSTR})"
+TXT="tmpRepositoryJobFAILURE!!!(${DTSTR})"
 echo ${TXT}
 ACT=2
 echo ${ACT}

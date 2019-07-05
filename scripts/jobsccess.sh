@@ -10,7 +10,7 @@ echo ${US}
 export TZ="Asia/Tokyo"
 DTSTR=`date "+%Y/%m/%d-%H:%M"`
 echo ${DTSTR}
-TXT="componentSampleJobFAILURE!!!(${DTSTR})"
+TXT="tmpRepositoryJobSUCCESS!!!(${DTSTR})"
 echo ${TXT}
 ACT=2
 echo ${ACT}
@@ -19,7 +19,9 @@ cd scripts/AgileAPIScript_Run
 chmod 555 ./agileApiObjectHandleBash.sh 
 ./agileApiObjectHandleBash.sh ${ACT} ${US} ${TXT}
 
-ACT=4
+TXT="Completed"
+echo ${TXT}
+ACT=1
 echo ${ACT}
 ./agileApiObjectHandleBash.sh ${ACT} ${US} ${TXT}
 

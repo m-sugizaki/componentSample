@@ -56,7 +56,7 @@ after_success:
 ###  - bash agileApiObjectHandleBash.sh 1 US557 Defined # RallyAPIテスト
 
 after_failure:
-
+  - bash scripts/jobfail.sh
 
 after_script:
 
