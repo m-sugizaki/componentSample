@@ -49,7 +49,7 @@ echo ${DATESTR}
 cp -p ./.travis.yml.codedeploy dist/.travis.yml
 cp -p ./appspec.yml dist/appspec.yml
 mkdir dist/scripts
-cp -rp ./scripts/ dist/scripts/
+cp -rp ./scripts/ dist/
 # cp -p ./scripts/repository.bat dist/scripts/repository.bat
 # cp -p ./scripts/jobsccess.sh dist/scripts/jobsccess.sh
 # cp -p ./scripts/jobfail2.sh dist/scripts/jobfail2.sh
