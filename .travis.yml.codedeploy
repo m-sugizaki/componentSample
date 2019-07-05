@@ -22,7 +22,7 @@ notifications:
 
 before_install:
   - echo "Pass -before install-"
-  - chmod 555 ./scripts/jobsccess.sh
+  - chmod 555 ./scripts/jobsuccess.sh
   - chmod 555 ./scripts/jobfail2.sh
 
 script:
