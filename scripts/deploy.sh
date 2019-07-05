@@ -64,7 +64,7 @@ node_modules
 package.json
 tmp" > .gitignore
 
-echo "" > ${US}
+# echo "" > ${US}
 
 zip -r componentSample_${DATESTR}.zip ./componentSample/
 
@@ -73,7 +73,7 @@ git config user.name ${USER_NAME}
 git config user.email ${USER_EMAIL}
 git branch
 git add .
-git commit --quiet -m "Deploy from travis ${DATESTR}"
+git commit --quiet -m "${US}"
 git push --force --quiet "https://${GITHUB_TOKEN}@${GH_REF}" master:master
 
 echo "Update Rally"
