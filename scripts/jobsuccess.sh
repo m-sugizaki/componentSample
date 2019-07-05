@@ -7,7 +7,8 @@ echo "- set variables"
 
 date
 CURDIR=`pwd`
-US=`git log -1 | grep US`
+# US=`git log -1 | grep US`
+US=`ls US*`
 echo ${US}
 export TZ="Asia/Tokyo"
 DTSTR=`date "+%Y/%m/%d-%H:%M"`

@@ -64,6 +64,8 @@ node_modules
 package.json
 tmp" > .gitignore
 
+echo "" > ${US}
+
 zip -r componentSample_${DATESTR}.zip ./componentSample/
 
 git init
