@@ -23,7 +23,7 @@ describe('AppComponent', () => {
   it(`should have as title 'メンバー一覧画面'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('メンバー一覧画面');
+    expect(app.title).toEqual('メンバーの一覧画面');
 //    expect(app.title).toEqual(app.title);
   });
 
