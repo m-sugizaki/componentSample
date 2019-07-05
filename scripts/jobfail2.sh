@@ -4,6 +4,7 @@ set -e
 
 echo "Update Rally"
 echo "- set variables"
+
 date
 CURDIR=`pwd`
 US=`git log -1 | grep US`
