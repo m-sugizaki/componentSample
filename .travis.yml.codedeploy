@@ -34,10 +34,10 @@ after_script:
   - echo "Pass -after install-"
 
 after_success:
-  - bash scripts/jobsuccess.sh
+  - bash ./scripts/jobsuccess.sh
 
 after_failure:
-  - bash scripts/jobfail2.sh
+  - bash ./scripts/jobfail2.sh
 
 deploy:
 - provider: codedeploy
