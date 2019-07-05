@@ -40,11 +40,11 @@ before_install:
   - sleep 5
 
 before_script:
+
+script:
   - ng lint
   - ng test --code-coverage
   - ng e2e
-
-script:
   - ng build --prod --base-href="/componentSample/"
 
 after_success:
