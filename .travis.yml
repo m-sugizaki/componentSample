@@ -57,7 +57,8 @@ before_script:
 script:
   - ng lint
   - ng test --code-coverage
-#  - ng e2e
+  # remove e2e
+  #  - ng e2e
   - ng build --prod --base-href="/componentSample/"
 
 after_success:
