@@ -34,10 +34,21 @@ before_install:
   - chmod 555 ./scripts/jobfail.sh
   - npm install -g @angular/cli
   # karma for travis
-  - export CHROME_BIN=chromium-browser
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-  - sleep 5
+  # Chromeが古すぎてコケた
+  # - export CHROME_BIN=chromium-browser
+  # - export DISPLAY=:99.0
+  # - sh -e /etc/init.d/xvfb start
+  # - sleep 5
+
+    - sudo apt-get update
+    - sudo apt-get install --assume-yes fonts-liberation libappindicator1
+    - wget -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    - sudo dpkg -i /tmp/chrome.deb
+    - export CHROME_BIN=google-chrome-stable
+    - export DISPLAY=:99.0
+    - sh -e /etc/init.d/xvfb start
+    - sleep 5
+
 
 before_script:
 
