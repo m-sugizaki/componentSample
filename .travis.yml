@@ -41,6 +41,7 @@ before_install:
   # - sh -e /etc/init.d/xvfb start
   # - sleep 5
 
+    - sudo apt-get autoremove
     - sudo apt-get update
     - sudo apt-get install --assume-yes fonts-liberation libappindicator1
     - wget -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
