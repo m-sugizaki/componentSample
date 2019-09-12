@@ -35,6 +35,7 @@ before_install:
   - chmod 555 ./scripts/jobfail.sh
   - npm install -g @angular/cli
   # karma for travis
+  
   # Chromeが古すぎてコケた
   # - export CHROME_BIN=chromium-browser
   # - export DISPLAY=:99.0
