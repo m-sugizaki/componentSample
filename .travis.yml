@@ -12,12 +12,13 @@ cache:
   directories:
     - node_modules
 
-addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
+#Chrome古すぎてコケた
+#addons:
+#  apt:
+#    sources:
+#      - google-chrome
+#    packages:
+#      - google-chrome-stable
 
   # sauce_connect: true
 
